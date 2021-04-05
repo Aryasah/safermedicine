@@ -1,0 +1,268 @@
+ <!DOCTYPE html>      {% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Payment Sucess| Safe Medicines</title>
+  <meta content="" name="description">
+
+  <meta content="" name="keywords">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %} " rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %} " rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %} " rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %} " rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %} " rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %} " rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %} " rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %} " rel="stylesheet">
+<style type="text/css"> html {
+  height: 100%;
+  /* max-height: 600px; */
+  width: 1000px;
+  background-color: hsla(200,40%,30%,.4);
+  background-image:   
+    url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'), 
+    url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
+    url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
+    url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
+    url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
+  background-repeat: repeat-x;
+  background-position: 
+    0 20%,
+    0 100%,
+    0 50%,
+    0 100%,
+    0 0;
+  background-size: 
+    2500px,
+    800px,
+    500px 200px,
+    1000px,
+    400px 260px;
+  animation: 50s para infinite linear;
+  }
+
+@keyframes para {
+  100% {
+    background-position: 
+      -5000px 20%,
+      -800px 95%,
+      500px 50%,
+      1000px 100%,
+      400px 0;
+    }
+  }
+
+    .countdownContainer{
+      position: absolute;;
+      top: 50%;
+      left: 50%;
+      transform : translateX(-50%) translateY(-50%);
+      text-align: center;
+      background: transparent;
+      border: 1px solid #999;
+      padding: 10px;
+      animation:niht 10s infinite linear;
+      border-radius:5px;
+      font-family: 'Train One', cursive;
+      color:white;
+    }
+        @keyframes niht{
+      0%,50%,100%{
+        box-shadow: 10px 10px 5px 3px red ;
+      }
+      75%,25%{
+        box-shadow: 8px 6px 10px 5px blue ;
+      }
+    }
+    .info {
+      font-size: 80px;
+              animation: flash 2s infinite ;
+    }
+            @keyframes flash {
+            0%, 50%, 100% {
+            opacity: 1;
+      font-size:40px;
+              }
+              25%, 75% {
+           opacity: 0;
+      font-size: 40px;
+      text-shadow: 1px 2px 2px;
+              }
+           }
+       .d{
+        box-shadow: 2px 2px 2px 2px grey ;
+        padding:2px;
+        margin:2px;
+       }
+
+</style>
+
+
+
+
+
+</head>
+
+
+<body>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+
+
+      <nav id="navbar" class="navbar">
+          <a href="index.html" class="logo d-flex align-items-center">
+        <img src="{% static 'assets/img/logo.png' %} " alt="">
+        <span style="font-family: 'Cookie', cursive; font-size:3rem; ">Safe Medicine</span>
+      </a>
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#appointment">Appointment</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#doctors">Doctors</a></li>
+          <li><a href="#faq"><b>FAQs</b></a></li>
+                  <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-user"  style="font-size:2rem" aria-hidden="true"></i></a></a>
+          <div class="dropdown-menu text-center">
+          
+              <a class="dropdown-item " href="/contact"><span style="font-family:'Cookie',cursive;font-size:1.8rem">WelCome</span> <span style="width:9rem;color:blue;font-size:2.2rem;font-family:'Lora',cursive"><i style="font-size:1.1rem">{{request.user}}</i></a>
+              <a class="nav-brand" style="font-size:1.4rem" href='/logout'> <i class="fa fa-sign-out" style="font-size:1.3rem" aria-hidden="true"> Log-Out</i></a>
+          
+          </div>
+      </li>
+          </ul>
+          &nbsp;&nbsp;
+              <a href="/contact"  style="  background: #1977cc;
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;">Continue Booking </a>
+        <i class="bi bi-list mobile-nav-toggle nav-brand"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+
+    <table class="countdownContainer">
+      <tr class="info">
+        <td colspan="4">Thank You for Placing Order </td>
+      </tr>
+      <tr class="info">
+        <td colspan="4">Your Order is Placed Sucessfully </td>
+      </tr>
+      <tr class="info">
+        <td colspan="4"><small>Order Id:<span style="color: red">1082vjh62</span></small> </td>
+      </tr>
+      <tr class="info">
+        <td colspan="4">It will reach you in </td>
+      </tr>
+      <tr class="info">
+        <td class="d" id="days"></td>
+        <td class="d" id="hours"></td>
+        <td class="d" id="minutes"></td>
+        <td class="d" id="seconds"></td>
+      </tr>
+      <tr>
+        <td>Days</td>
+        <td>Hours</td>
+        <td>Minutes</td>
+        <td>Seconds</td>
+      </tr>
+
+    </table>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter.js'  %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js'  %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js'  %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main%}"></script>
+
+
+   <script type="text/javascript">
+
+      function countdown(){
+        var now = new Date();
+
+        var eventDate = new Date(now.getFullYear(), 3, 5);
+            
+
+        var currentTiime = now.getTime();
+        var eventTime = eventDate.getTime();
+
+        var remTime = eventTime - currentTiime;
+                
+
+        var s = Math.floor(remTime / 1000);
+        var m = Math.floor(s / 60);
+        var h = Math.floor(m / 60);
+        var d = Math.floor(h / 24);
+
+        h %= 24;
+        m %= 60;
+        s %= 60;
+
+        h = (h < 10) ? "0" + h : h;
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s;
+
+        document.getElementById("days").textContent = d;
+        document.getElementById("days").innerText = d;
+
+        document.getElementById("hours").textContent = h;
+        document.getElementById("minutes").textContent = m;
+        document.getElementById("seconds").textContent = s;
+
+        setTimeout(countdown, 1000);
+      }
+
+      countdown();
+    </script>
+    <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+
+</body>
+
+</html>

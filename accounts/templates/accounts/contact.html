@@ -1,0 +1,699 @@
+ <!DOCTYPE html>      {% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Book Medicines| Safe Medicines</title>
+  <meta content="" name="description">
+
+  <meta content="" name="keywords">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %} " rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %} " rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %} " rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %} " rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %} " rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %} " rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %} " rel="stylesheet">
+
+  <style type="text/css">
+    .change_content:after{
+    content: '';
+    animation: changetext 10s infinite linear;
+    color:#00b894;
+}
+@keyframes changetext{
+  0%{content:"Best Service;"}
+  20%{content:"Fast Delivery;"}  
+  40%{content:"Free Delivery;"}  
+  60%{content:"30% Discount;"}  
+  80%{content:"Doctors Consultant;"} 
+  100% {content:"Geniune Medicine;"} 
+  </style>
+
+
+
+
+
+</head>
+
+
+<body>
+
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+
+
+      <nav id="navbar" class="navbar">
+          <a href="index.html" class="logo d-flex align-items-center">
+        <img src="{% static 'assets/img/logo.png' %} " alt="">
+        <span style="font-family: 'Cookie', cursive; font-size:3rem; ">Safe Medicine</span>
+      </a>
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#appointment">Appointment</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#doctors">Doctors</a></li>
+          <li><a href="#faq"><b>FAQs</b></a></li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-user"  style="font-size:2rem" aria-hidden="true"></i></a></a>
+          <div class="dropdown-menu text-center">
+          
+              <a class="dropdown-item " href="/contact"><span style="font-family:'Cookie',cursive;font-size:1.8rem">WelCome</span> <span style="width:9rem;color:blue;font-size:2.2rem;font-family:'Lora',cursive"><i style="font-size:1.1rem">{{request.user}}</i></a>
+              <a class="nav-brand" style="font-size:1.4rem" href='/logout'> <i class="fa fa-sign-out" style="font-size:1.3rem" aria-hidden="true"> Log-Out</i></a>
+          
+          </div>
+      </li>
+      
+          </ul>
+          &nbsp;&nbsp;
+              <a href="#gallery"  style="  background: #1977cc;
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;">Book Medicines</a>
+
+
+
+
+        <i class="bi bi-list mobile-nav-toggle nav-brand"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  
+
+  <!-- ======= Hero Section ======= -->
+ <div class="container-fluid" style=" height: 100vh;background-image: linear-gradient(135deg, rgba(52, 152, 219,0.5) 0%,rgba(243, 65, 65, 0.4) 100%),url({% static 'assets/img/herobg-1.jpg' %});background-repeat: no-repeat;background-size: cover;display: flex;justify-content: center;">
+<div class="text-center" style="margin-top:45vh;margin-left: 10vw; color:white;">
+  <h1 class="display-4 text-center " style="font-weight: bolder" >We Provide: <span class="change_content"></span></h1>
+  <p style="font-weight: bold">We will provide best class of service with geniune medicine</p>
+<p style="font-weight: 400;">#Stay Safe Stay At home</p><br>
+</div>
+
+ </div>
+  <main id="main">
+
+
+
+        <!-- =======Medicine Section ======= -->
+    <section id="gallery" class="gallery container-fluid">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 class="text-center display-5" style="font-weight: 500" >Frequently Bought Medicine</h2>
+          <p class="text-center">Hurry Up! Book Now. A wide variety of medicines made available  to customers from local stores.<br>
+          You can choose your preferable shop from where you want to buy medicines</p>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="col-lg-12">
+            <!-- F.A.Q List 1-->
+            <div class="accordion accordion-flush" id="faqlist1">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                    Ayurvedic
+                  </button>
+                </h2>
+                <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                    <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-1.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-1.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med3.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med3.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med3.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med3.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-1.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-1.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div></strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+                    Allopathy
+                  </button>
+                </h2>
+                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                           <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-1.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-1.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med3.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med3.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med3.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med3.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-1.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-1.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+        </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+                    Naturopathy
+                  </button>
+                </h2>
+                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                  <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-1.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-1.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med3.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med3.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med3.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med3.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-1.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-1.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div></strong>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+               <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-4">
+                    Homeopathy
+                  </button>
+                </h2>
+                <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                  <div class="row no-gutters">
+                     <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-1.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-1.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med3.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med3.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/med3.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/med3.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-1.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-1.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{% static 'assets/img/gallery/gallery-2.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'assets/img/gallery/gallery-2.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div></strong>
+                  </div>
+                  </div>
+                </div>
+              </div>
+</div>
+</div>
+        
+
+        </div>
+
+              
+
+
+
+       
+      
+
+        <br>
+        
+      
+        <div class="text-center">
+      <a href="#" style="  background: #1977cc;
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;">More Medicines</a>
+</div>
+      </div>
+
+    </section><!-- End Gallery Section -->
+
+
+<!--  <section id="order" class="order">
+   <div class="container-fluid">
+     <div class="container">
+       <form action="success.html">
+         <div class="text-center">
+          <h1 class="display-5">Place Your Order</h1>
+        </div>
+        <in
+       </form>
+     </div>
+   </div>
+ </section> -->
+
+
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Order Now</h2>
+          <p>Place Your Order</p>
+
+        </header>
+        {% if messages %}
+
+        <div class="container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7367.858046133004!2d88.3334490225358!3d22.5817577970234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027793e322b5b1%3A0x252e90291f4157f5!2sHowrah%20Railway%2C%20Howrah%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1617313637515!5m2!1sen!2sin" width="1070" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+                {% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+  <strong>{{ message }}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+ {% endfor %}
+{% endif %}
+        <form action="/contact" method="post">
+        {% csrf_token %}
+
+        <div class="row gy-4">
+
+
+          <div class="col-lg-6">
+
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-geo-alt"></i>
+                   
+                  <h3>Choose Your City</h3>
+                  
+                  <select name="city" id="doctor" class="form-control">
+                <option value="">Chhose Your City</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Howrah">Howrah</option>
+                <option value="Durgapur">Durgapur</option>
+                <option value="Ranchi">Ranchi</option>
+                <option value="Patna">Patna</option>
+              </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Phone Number</h3>
+
+                  <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Your Email</h3>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-clock"></i>
+                  <h3>Time of Delivery</h3>
+                  <input type="datetime-local" name="date" class="form-control datepicker" id="date" placeholder="Time Of Dlivery" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <div class="php-email-form">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="fname" class="form-control" placeholder="First Name*" required>
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="text" class="form-control" name="lname" placeholder="Last Name*" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Enter The Name of medicine*" required>
+                  Upload prescription: *
+                  <input type="file" id="myFile" name="filename">
+                  
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="desc" rows="6" placeholder="You Can Choose Your Trusted Shop by Clicking On Map Or Write Address Manually Here " ></textarea>
+                </div>
+
+
+
+                  <button href="contact" type="submit">Place Order</button>
+                </div>
+
+              </div>
+              <div>
+          
+
+          </div>
+
+        </div>
+          </form>
+
+      </div>
+
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+<footer class="footer-distributed mt-0 mb-0">
+
+      <div class="footer-left">
+
+        <h3>Safe<span>Medicines</span></h3>
+
+        <p class="footer-links">
+          <a href="/">Home</a>
+          ·
+          <a href="/medicine">Medicine</a>
+          ·
+          <a href="/about">About</a>
+          ·
+          <a href="/contact">Contact</a>
+        </p>
+
+        <p class="footer-company-name">Ode To Code &copy; 2021</p>
+      </div>
+
+      <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>18/1 Bon Behari Bose Road</span> Howrah, West Bengal</p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+91 9123045078</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a style="color:white;font-weight:bold;font-size: 1.5rem;" href="https://mail.google.com/mail/?view=cm&fs=1&to=aryasah30@gmail.com"><span>Aryasah30@gmail.com</span></a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>About the company</span>
+          We promise reliable medicines at your doorsteps #Stay Safe #Stay at home
+        </p>
+
+        <div class="footer-icons">
+
+          <a href="https://www.facebook.com/arya.sah.98892"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/arya-sah-5100121b3/"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+      </div>
+
+    </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+      <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
