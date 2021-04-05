@@ -62,7 +62,7 @@
           </div>
           </ul>
           &nbsp;&nbsp;
-              <a href="medicine.html"  style="  background: #1977cc;
+              <a href="/contact"  style="  background: #1977cc;
   border: 0;
   padding: 10px 35px;
   color: #fff;
@@ -73,7 +73,8 @@
 
     </div>
   </header><!-- End Header -->
-
+	
+{% if %}
 <div class="container-fluid py-5" style=" height:120vh;background-image: linear-gradient(135deg, rgba(52, 152, 219,0.5) 0%,rgba(243, 65, 65, 0.4) 100%),url({% static 'assets/img/payment.jpg' %});background-repeat: no-repeat;background-size: cover;display: block;justify-content: center;">
     <!-- For demo purpose -->
     <div class="row mb-4 mt-5">
@@ -104,7 +105,7 @@
                     <div class="tab-content">
                         <!-- credit card info-->
                         <div id="credit-card" class="tab-pane fade show active pt-3">
-                            <form role="form" aaction="success.html">
+                            <form role="form" action="/ordersuccess" method="post">
                             {% csrf_token %}
                                 <div class="form-group"> <label for="username">
                                         <h6>Card Owner</h6>
