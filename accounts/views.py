@@ -118,7 +118,21 @@ def error_page(request):
 # Create your views here.
 def index(request):
     if request.user.is_anonymous:
-        return redirect('/accounts/login') 
+        return redirect('/accounts/login')
+    if request.method == "POST":
+        uname = request.POST.get('name')
+        
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        
+        
+        
+        messages.success(request, 'Your message has been sent!')
+        subject = 'Contact'
+        message = f'Username {uname} Email :{email} Subject: {subject} Message:{message}'
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = ['aryasah30@gmail.com']
+        send_mail(subject, message , email_from ,recipient_list )
     return render(request, 'accounts/home.html')
 
 
