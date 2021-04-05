@@ -62,6 +62,15 @@
           <li><a href="#contact">Contact Us</a></li>
           <li><a href="#doctors">Doctors</a></li>
           <li><a href="#faq"><b>FAQs</b></a></li>
+	  <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-user"  style="font-size:2rem" aria-hidden="true"></i></a></a>
+          <div class="dropdown-menu text-center">
+          
+              <a class="dropdown-item " href="/contact"><span style="font-family:'Cookie',cursive;font-size:1.8rem">WelCome</span> <span style="width:9rem;color:blue;font-size:2.2rem;font-family:'Lora',cursive"><i style="font-size:1.1rem">{{request.user}}</i></a>
+              <a class="nav-brand" style="font-size:1.4rem" href='/logout'> <i class="fa fa-sign-out" style="font-size:1.3rem" aria-hidden="true"> Log-Out</i></a>
+          
+          </div>
+      </li>
           </ul>
           &nbsp;&nbsp;
               <a href="#gallery"  style="  background: #1977cc;
@@ -352,7 +361,7 @@
         </div>
         <br>
         <div class="text-center">
-      <a href="medicine.html" style="  background: #1977cc;
+      <a href="/contact" style="  background: #1977cc;
   border: 0;
   padding: 10px 35px;
   color: #fff;
