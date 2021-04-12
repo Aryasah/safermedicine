@@ -159,12 +159,12 @@ def contact(request):
         contacted.save()
         messages.success(request, 'Your message has been sent!')
         return redirect('/payment')
-#         subject = 'New Contact list '
-#         message = f'{fname} {lname} {email} {phone}{medname} {desc} {city} {datetim} {file}'
-#         email_from = settings.EMAIL_HOST_USER
-#         recipient_list = [email]
-#         send_mail(subject, message , email_from ,recipient_list ) 
-#         print(message)
+        subject = 'Order Deatails'
+        message = f'{fname} {lname} {email} {phone}{medname} {desc} {city} {datetim} {file}'
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [email]
+        send_mail(subject, message , email_from ,recipient_list ) 
+        print(message)
     return render(request, 'accounts/contact.html')
 
 def logoutUser(request):
