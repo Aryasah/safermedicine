@@ -158,6 +158,7 @@ def contact(request):
         contacted = Order(fname=fname,lname=lname, email=email,city=city,file=file, phone=phone, desc=desc, date =datetim,medname=medname,)
         contacted.save()
         messages.success(request, 'Your message has been sent!')
+        return redirect('/payment')
 #         subject = 'New Contact list '
 #         message = f'{fname} {lname} {email} {phone}{medname} {desc} {city} {datetim} {file}'
 #         email_from = settings.EMAIL_HOST_USER
@@ -201,14 +202,14 @@ def payment(request):
         pay.save()
         
         messages.success(request, 'Your message has been sent!')
-        
+        return redirect('/order')
         # subject = 'Payment'
         # message = f'Username {uname} Year{year} Month :{month} Cardno: {cardNumber}  CVV {cvv}'
         # email_from = settings.EMAIL_HOST_USER
         # recipient_list = ['aryasah30@gmail.com']
         # send_mail(subject, message , email_from ,recipient_list ) 
         # print(message)
-        return redirect("/order")
+        return redirect('/order')
     return render(request, 'accounts/payment.html')
     
 def contacts(request):
