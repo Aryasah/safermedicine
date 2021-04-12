@@ -154,8 +154,8 @@ def contact(request):
         email = request.POST.get('email')
         phone = request.POST.get('phone')
         desc = request.POST.get('desc')
-        contact = Order(fname=fname,lname=lname, email=email,city=city,file=file, phone=phone, desc=desc, date =datetim)
-        contact.save()
+        contacted = Order(fname=fname,lname=lname, email=email,city=city,file=file, phone=phone, desc=desc, date =datetim)
+        contacted.save()
         messages.success(request, 'Your message has been sent!')
         subject = 'New Contact list '
         message = f'{fname} {lname} {email} {phone} {desc} {city} {datetim} {file}'
