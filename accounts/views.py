@@ -130,11 +130,11 @@ def index(request):
         
         
         messages.success(request, 'Your message has been sent!')
-        subject = 'Contact'
-        message = f'Username {uname} Email :{email} Subject: {subject} Message:{message}'
-        email_from = settings.EMAIL_HOST_USER
-        recipient_list = ['aryasah30@gmail.com']
-        send_mail(subject, message , email_from ,recipient_list )
+#         subject = 'Contact'
+#         message = f'Username {uname} Email :{email} Subject: {subject} Message:{message}'
+#         email_from = settings.EMAIL_HOST_USER
+#         recipient_list = ['aryasah30@gmail.com']
+#         send_mail(subject, message , email_from ,recipient_list )
     return render(request, 'accounts/home.html')
 
 
@@ -154,13 +154,14 @@ def contact(request):
         email = request.POST.get('email')
         phone = request.POST.get('phone')
         desc = request.POST.get('desc')
-        contacted = Order(fname=fname,lname=lname, email=email,city=city,file=file, phone=phone, desc=desc, date =datetim)
+        medname=request.POST.get('subject')
+        contacted = Order(fname=fname,lname=lname, email=email,city=city,file=file, phone=phone, desc=desc, date =datetim,medname=medname,)
         contacted.save()
         messages.success(request, 'Your message has been sent!')
 #         subject = 'New Contact list '
-#         message = f'{fname} {lname} {email} {phone} {desc} {city} {datetim} {file}'
+#         message = f'{fname} {lname} {email} {phone}{medname} {desc} {city} {datetim} {file}'
 #         email_from = settings.EMAIL_HOST_USER
-#         recipient_list = ['email']
+#         recipient_list = [email]
 #         send_mail(subject, message , email_from ,recipient_list ) 
 #         print(message)
     return render(request, 'accounts/contact.html')
@@ -219,7 +220,7 @@ def contacts(request):
         contact = Contact(name=name, email=email, phone=phone, desc=desc, date = datetime.today())
         contact.save()
         subject = 'Thank You For Contacting TechArya '
-        message = f'Dear {name} : Thank you for contacting with us. We greatly appreciate the time you took to contact us we will soon reach you with reply. You can go to https://techaryasah.herokuapp.com/ '
+        message = f'Dear {name} : Thank you for contacting with us. We greatly appreciate the time you took to contact us we will soon reach you with reply. You can go to https://aryasahmedicine.herokuapp.com/ '
         email_from = settings.EMAIL_HOST_USER
         recipient_list = ['aryasah30@gmail.com']
         send_mail(subject, message , email_from ,recipient_list ) 
