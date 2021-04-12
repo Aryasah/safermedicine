@@ -29,6 +29,7 @@ class Order(models.Model):
     email = models.CharField(max_length=122,blank=True,null=True)
     phone = models.CharField(max_length=12,blank=True,null=True)
     desc = models.TextField(default="none",blank=True,null=True)
+    medname = models.TextField(default="none",blank=True,null=True)
     date = models.DateTimeField(auto_now_add=True)
 
 
