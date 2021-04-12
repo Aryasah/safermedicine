@@ -157,12 +157,12 @@ def contact(request):
         contacted = Order(fname=fname,lname=lname, email=email,city=city,file=file, phone=phone, desc=desc, date =datetim)
         contacted.save()
         messages.success(request, 'Your message has been sent!')
-        subject = 'New Contact list '
-        message = f'{fname} {lname} {email} {phone} {desc} {city} {datetim} {file}'
-        email_from = settings.EMAIL_HOST_USER
-        recipient_list = ['email']
-        send_mail(subject, message , email_from ,recipient_list ) 
-        print(message)
+#         subject = 'New Contact list '
+#         message = f'{fname} {lname} {email} {phone} {desc} {city} {datetim} {file}'
+#         email_from = settings.EMAIL_HOST_USER
+#         recipient_list = ['email']
+#         send_mail(subject, message , email_from ,recipient_list ) 
+#         print(message)
     return render(request, 'accounts/contact.html')
 
 def logoutUser(request):
