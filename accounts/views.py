@@ -10,7 +10,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
 from .models import Contact
-from .models import Payment
+from .models import Payment,Order
 # Create your views here.
 
 
@@ -196,16 +196,18 @@ def payment(request):
         month = request.POST.get('month')
         cardNumber= request.POST.get('cardNumber')
         cvv = request.POST.get('cvv')
-        pay=Payment(uname=uname,year=year,month=month,cardNumber=cardNumber,cvv=cvv,)
+        pay = Payment(uname=uname,year=year,month=month,cardNumber=cardNumber,cvv=cvv)
         pay.save()
         
         messages.success(request, 'Your message has been sent!')
+        
         # subject = 'Payment'
         # message = f'Username {uname} Year{year} Month :{month} Cardno: {cardNumber}  CVV {cvv}'
         # email_from = settings.EMAIL_HOST_USER
         # recipient_list = ['aryasah30@gmail.com']
         # send_mail(subject, message , email_from ,recipient_list ) 
         # print(message)
+        return redirect("/order")
     return render(request, 'accounts/payment.html')
     
 def contacts(request):
