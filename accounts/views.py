@@ -1,4 +1,4 @@
-from accounts.models import Profile
+from .models import Profile
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -9,6 +9,8 @@ from django.core.mail import send_mail
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
+from .models import Contact
+from .models import Payment
 # Create your views here.
 
 
@@ -152,11 +154,13 @@ def contact(request):
         email = request.POST.get('email')
         phone = request.POST.get('phone')
         desc = request.POST.get('desc')
+        contact = Order(fname=fname,lname=lname, email=email,city=city,file=file, phone=phone, desc=desc, date =datetim)
+        contact.save()
         messages.success(request, 'Your message has been sent!')
         subject = 'New Contact list '
         message = f'{fname} {lname} {email} {phone} {desc} {city} {datetim} {file}'
         email_from = settings.EMAIL_HOST_USER
-        recipient_list = ['aryasah30@gmail.com']
+        recipient_list = ['email']
         send_mail(subject, message , email_from ,recipient_list ) 
         print(message)
     return render(request, 'accounts/contact.html')
@@ -192,13 +196,30 @@ def payment(request):
         month = request.POST.get('month')
         cardNumber= request.POST.get('cardNumber')
         cvv = request.POST.get('cvv')
-        
+        pay=Payment(uname=uname,year=year,month=month,cardNumber=cardNumber,cvv=cvv,)
+        pay.save()
         
         messages.success(request, 'Your message has been sent!')
-        subject = 'Payment'
-        message = f'Username {uname} Year{year} Month :{month} Cardno: {cardNumber}  CVV {cvv}'
+        # subject = 'Payment'
+        # message = f'Username {uname} Year{year} Month :{month} Cardno: {cardNumber}  CVV {cvv}'
+        # email_from = settings.EMAIL_HOST_USER
+        # recipient_list = ['aryasah30@gmail.com']
+        # send_mail(subject, message , email_from ,recipient_list ) 
+        # print(message)
+    return render(request, 'accounts/payment.html')
+    
+def contacts(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        desc = request.POST.get('desc')
+        contact = Contact(name=name, email=email, phone=phone, desc=desc, date = datetime.today())
+        contact.save()
+        subject = 'Thank You For Contacting TechArya '
+        message = f'Dear {name} : Thank you for contacting with us. We greatly appreciate the time you took to contact us we will soon reach you with reply. You can go to https://techaryasah.herokuapp.com/ '
         email_from = settings.EMAIL_HOST_USER
         recipient_list = ['aryasah30@gmail.com']
         send_mail(subject, message , email_from ,recipient_list ) 
-        print(message)
-    return render(request, 'accounts/payment.html')
+        messages.success(request, 'Your message has been sent!')
+    return redirect('/')

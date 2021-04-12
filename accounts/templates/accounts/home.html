@@ -824,33 +824,29 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="/" method="post" class="php-email-form">
-		    {% csrf_token %}
-              <div class="row gy-4">
+            <form method="post" action="/contacts">
+    {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text"  reqiured class="form-control" id="name" name="name" placeholder="Enter your Name">
+        </div>
 
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                </div>
-
-
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
+        <div class="form-group">
+            <label for="email">Email address: <i class="fa fa-envelope" style="font-size:1.2rem; color:blue"></i></label>
+            <input type="email"  reqiured class="form-control" id="email" name="email" placeholder="Enter Your Email">
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone Number: <i class="fa fa-phone" style="font-size:1.2rem; color:blue"></i></label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+        </div>      
+        
+        <div class="form-group">
+            <label for="desc">Write Your Message: <i class="fa fa-comments" style="font-size:1.2rem;color:blue"></i></label>
+            <textarea class="form-control"  reqiured id="desc" rows="3" name="desc"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit"><b>Send</b>  <i class="fa fa-send" style="font-size:1.2rem;color:white"></i></button>
+    </form>
 
           </div>
 
