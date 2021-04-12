@@ -17,7 +17,7 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
- list_display = ['id', 'fname','lname','email','phone','desc','city','datetim','medname']
+ list_display = ['id', 'fname','lname','email','phone','desc','city','medname']
 
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
