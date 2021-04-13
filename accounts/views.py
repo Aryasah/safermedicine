@@ -11,9 +11,11 @@ from django.contrib.auth.decorators import login_required
 from datetime import datetime
 from .models import Contact
 from .models import Payment,Order
+from .forms import ReviewForm
 # Create your views here.
 
-
+imag=''
+forms=''
 
 def login_attempt(request):
     if request.method=="POST":
@@ -135,7 +137,19 @@ def index(request):
 #         email_from = settings.EMAIL_HOST_USER
 #         recipient_list = ['aryasah30@gmail.com']
 #         send_mail(subject, message , email_from ,recipient_list )
-    return render(request, 'accounts/home.html')
+    return render(request, 'accounts/home.html', {'imag':imag, 'forms':forms,})
+                  
+def review(request):
+     if request.method=="POST":
+                  global imag
+                  global forms
+                  imag=Review.objects.all()
+                  forms = ReviewForm()
+                  
+     return redirect('/')
+               
+
+
 
 
 
