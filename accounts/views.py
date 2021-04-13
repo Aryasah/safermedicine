@@ -145,6 +145,7 @@ def review(request):
                   global forms
                   imag=Review.objects.all()
                   forms = ReviewForm()
+                  messages.success(request, 'Thank You for Your Lovely Review  has been submitted!')
                   
      return redirect('/')
                
