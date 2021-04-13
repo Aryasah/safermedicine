@@ -22,3 +22,6 @@ class OrderAdmin(admin.ModelAdmin):
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
  list_display = ['id', 'uname','month','year','cardNumber','cvv',]
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+ list_display = ['id', 'picture', 'username', 'profession','comment']
