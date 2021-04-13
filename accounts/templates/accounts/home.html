@@ -628,7 +628,6 @@
     </section><!-- End F.A.Q Section -->
 
 
-
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
 
@@ -641,87 +640,27 @@
 
         <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="200">
           <div class="swiper-wrapper">
-
+          {% for z in imag %}
+   
             <div class="swiper-slide">
+            
               <div class="testimonial-item">
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                It was a very nice experience delivery was exactly ontime. Really they provide very huge discounts upto 40%
+                {{z.comment}}
                 </p>
                 <div class="profile mt-auto">
-                  <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
+                  <img src="https://webstockreview.net/images/profile-icon-png.png" class="testimonial-img" alt="">
+                  <h3>{{z.username}}</h3>
+                  <h4>{{z.profession}}</h4>
                 </div>
               </div>
+              
             </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  It was a very nice experience delivery was exactly ontime. Really they provide very huge discounts upto 40%
-                </p>
-                <div class="profile mt-auto">
-                  <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Engineer</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  It was a very nice experience delivery was exactly ontime. Really they provide very huge discounts upto 40%
-                </p>
-                <div class="profile mt-auto">
-                  <img src="{% static 'assets/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Doctor</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  It was a very nice experience delivery was exactly ontime. Really they provide very huge discounts upto 40%
-                </p>
-                <div class="profile mt-auto">
-                  <img src="{% static 'assets/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  It was a very nice experience delivery was exactly ontime. Really they provide very huge discounts upto 40%
-                </p>
-                <div class="profile mt-auto">
-                  <img src="{% static 'assets/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
+            {% endfor %}
+             
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -729,7 +668,6 @@
       </div>
 
     </section><!-- End Testimonials Section -->
-
     
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">
