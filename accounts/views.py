@@ -123,6 +123,10 @@ def error_page(request):
 def index(request):
     if request.user.is_anonymous:
         return redirect('/accounts/login')
+    global imag
+    global forms
+    imag=Review.objects.all()
+    forms = ReviewForm()
     if request.method == "POST":
         uname = request.POST.get('name')
         
@@ -140,12 +144,16 @@ def index(request):
     return render(request, 'accounts/home.html', {'imag':imag, 'forms':forms,})
                   
 def review(request):
-     if request.method=="POST":
-                  global imag
-                  global forms
-                  imag=Review.objects.all()
-                  forms = ReviewForm()
-                  messages.success(request, 'Thank You for Your Lovely Review  has been submitted!')
+       global forms
+       if request.method == "POST":
+       forms = ReviewForm(request.POST, request.FILES)
+       if forms.is_valid():
+       forms.save()
+       forms = ReviewForm()
+       global imag
+       imag=Review.objects.all()
+       messages.success(request, 'Thank You For Your Reviews It is submitted succesfully')
+
                   
      return redirect('/')
                
