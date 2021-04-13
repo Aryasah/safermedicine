@@ -20,6 +20,14 @@ class Payment(models.Model):
     cardNumber = models.IntegerField(default="none",blank=True,null=True)
     cvv = models.IntegerField(blank=True,null=True)
     date = models.DateTimeField(auto_now_add=True)
+    
+class Review(models.Model):
+ 
+ time = models.DateTimeField(auto_now_add=True)
+ username= models.CharField(max_length=122,blank=True,null=True)
+ profession=models.CharField( max_length=50,blank=True,null=True)
+ comment= models.CharField(max_length=122,blank=True,null=True)
+ picture = models.ImageField(upload_to="user")
 
 class Order(models.Model):
     fname = models.CharField(max_length=122,blank=True,null=True)
