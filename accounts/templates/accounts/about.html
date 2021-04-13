@@ -1,122 +1,274 @@
-{% extends 'accounts/base.html' %}
-{% load static %}
+<!DOCTYPE html>  
+{% load static %} 
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Home| Safe Medicines</title>
+  <meta content="" name="description">
+
+  <meta content="" name="keywords">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %} " rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %} " rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %} " rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %} " rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %} " rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %} " rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %} " rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link type ="text/css" href="{% static 'css/index.css' %}" rel="stylesheet">
 
 
-{% block title %}About{% endblock title %}
+</head>
 
-{% block head %}
-    <link  type ="text/css" href="static/css/about.css" rel="stylesheet">
-{% endblock head %}
-{% block icon %} 
-        <ul class="navbar-nav">
-        <li class="nav-item dropdown">
+
+<body>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+
+
+      <nav id="navbar" class="navbar">
+          <a href="/" class="logo d-flex align-items-center">
+        <img src="{% static 'assets/img/logo.png' %} " alt="">
+        <span style="font-family: 'Cookie', cursive; font-size:3rem; ">Safe Medicine</span>
+      </a>
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#appointment">Appointment</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#doctors">Doctors</a></li>
+          <li><a href="#faq"><b>FAQs</b></a></li>
+	  <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-user"  style="font-size:2rem" aria-hidden="true"></i></a></a>
           <div class="dropdown-menu text-center">
-              <a class="dropdown-item " href="/contact"><span style="font-family:'Cookie',cursive;font-size:1.6rem">WelCome</span> <span style="color:blue;font-size:1.2rem;font-family:'Lora',cursive"><i>{{request.user}}</i></a>
-              <a class="nav-brand " href='/logout'> <i class="fa fa-sign-out" aria-hidden="true"> Log-Out</i></a>
+          
+              <a class="dropdown-item " href="/contact"><span style="font-family:'Cookie',cursive;font-size:1.8rem">WelCome</span> <span style="width:9rem;color:blue;font-size:2.2rem;font-family:'Lora',cursive"><i style="font-size:1.1rem">{{request.user}}</i></a>
+              <a class="nav-brand" style="font-size:1.4rem" href='/logout'> <i class="fa fa-sign-out" style="font-size:1.3rem" aria-hidden="true"> Log-Out</i></a>
+          
           </div>
       </li>
-      </ul>
+          </ul>
+          &nbsp;&nbsp;
+              <a href="#gallery"  style="  background: #1977cc;
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;">Book Medicines</a>
+        <i class="bi bi-list mobile-nav-toggle nav-brand"></i>
+      </nav><!-- .navbar -->
 
-{% endblock icon %}
-{% block home %}/{% endblock home %}
-{% block contact %}/contact{% endblock contact %}
-{% block about %}/about{% endblock about %}
-{% block body %}
+    </div>
+  </header><!-- End Header -->
 
-<section>
-<div class="bg-light">
-  <div class="container py-5">
-    <div class="row h-100 align-items-center py-5">
-      <div class="col-lg-6">
-        <h1 class="display-4">About Us</h1>
-        <p class="lead text-muted mb-0"><span style="font-family: 'Cookie', cursive; font-size:2rem;">Incredible India</span> has been committed to bringing our clients the best in value and quality travel arrangements. We are passionate about travel and sharing the world's wonders on the leisure travel side, and providing corporate travelers hi-touch services to facilitate their business travel needs.</p>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">We offer complete solutions for your health in this pandemic period</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">We make sure that genuine medicine and consultancy at your doorsteps</h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span>Get Started</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="https://viame.ae/wp-content/uploads/2019/10/Medical-Delivery-Services.png" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Features</h2>
+          <p>Best In class delivery of medicines</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <img src="https://cruzotec.com/wp-content/uploads/2020/11/Group-93-978x1024.png' " class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
+            <div class="row align-self-center gy-4">
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Min 20% Discount</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Free Home Delivery</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>24/7 Doctors Consultancy</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Locally sourced medicine</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Geniune medicine</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Contact-less Deliery</h3>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div> <!-- / row -->
+
+ 
+
+
 
       </div>
-      <div class="col-lg-6 d-none d-lg-block"><img src="https://techkiga.com/wp-content/uploads/2019/01/Tour-Travel-PNG-Elements-1024x707.png" alt="" class="img-fluid"></div>
-    </div>
-  </div>
-</div>
-</section>
+
+    </section><!-- End Features Section -->
+
+
+
+
+
+  
+
+
+
+
 <section>
-<div class="bg-white py-5">
-  <div class="container py-5">
-    <div class="row align-items-center mb-5">
-      <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
-        <h2 class="font-weight-light">Provide Complete Online Solution</h2>
-        <p class="font-italic text-muted mb-4">You can book your trip anytime and from anywhere as we also provide online booking and virtual visit( <span style="font-weight:bold;">Free of Cost</span>) to facilities before final booking  </p><a href="#" class="btn btn-light px-5 rounded-pill shadow-sm">Book Now</a>
-      </div>
-      <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556834139/img-1_e25nvh.jpg" alt="" class="img-fluid mb-4 mb-lg-0"></div>
-    </div>
-</div>
-</section>
-<section>
-<div class="bg-light py-5">
+
+<div id="team" class="bg-light py-5">
   <div class="container py-5">
     <div class="row mb-4 text-center mx-100">
       <div class="col-lg-12 ml-30% ">
         <h2 class="display-4 font-weight-light ">Our team</h2>
-        <p class="font-italic text-muted">We are A team of Enthusiastic people determined to make your trip memorable</p>
+        <p class="font-italic text-muted">We are A team of Enthusiastic people determined to  help you in your quest for technical knowledge </p>
       </div>
     </div>
 
     <div class="row text-center">
+   
       <!-- Team item-->
       <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{% static 'img/arya.jpg' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0">Arya Sah</h5><span class="small text-uppercase text-muted">Cheif Executive Officer</span>
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img style="height:230px;max-height:230px;max-width:200px; width:200px" src="{% static 'assets/img/testimonials/aryasah.jpeg' %}"  alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Arya Sah</h5><span class="small text-uppercase text-muted">Director</span>
           <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-linkedin"></i></a></li>
           </ul>
         </div>
       </div>
+    
       <!-- End-->
-
-
-      <!-- Team item-->
+          <!-- Team item-->
       <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{% static 'img/subham.jpg' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0">Subham Sah</h5><span class="small text-uppercase text-muted">Cheif Guide</span>
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img style="height:230px;max-height:230px;max-width:200px; width:200px" src="{% static 'assets/img/testimonials/kritika.jpg' %}"  alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Kritika Raj</h5><span class="small text-uppercase text-muted">Chief Executive Officer</span>
           <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-linkedin"></i></a></li>
           </ul>
         </div>
       </div>
-      <!-- End-->
 
-      <!-- Team item-->
+            <!-- Team item-->
       <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{% static 'img/kritika.jpg' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0">Kritika Raj</h5><span class="small text-uppercase text-muted">Managing Director</span>
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img style="height:230px;max-height:230px;max-width:200px; width:200px" src="{% static 'assets/img/testimonials/dhiraj.jpg' %}"  alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Dhiraj Kumar</h5><span class="small text-uppercase text-muted">Cheif Manager</span>
           <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-linkedin"></i></a></li>
           </ul>
         </div>
       </div>
-      <!-- End-->
 
-      <!-- Team item-->
-      <div class="col-xl-3 col-sm-6 mb-2">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{% static 'img/dhiraj.jpg' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0">Dhiraj Kumar</h5><span class="small text-uppercase text-muted">Accounts Head</span>
+            <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img style="height:230px;max-height:230px;max-width:200px; width:200px" src="{% static 'assets/img/testimonials/aryan.jpg' %}"  alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Aryan Kumar</h5><span class="small text-uppercase text-muted">Financial Advisor</span>
           <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i style="font-size:1.2rem" class="fa fa-linkedin"></i></a></li>
           </ul>
         </div>
       </div>
-      <!-- End-->
+
+
+
+
+
+ 
+ 
 
     </div>
   </div>
@@ -124,33 +276,95 @@
 
 </section>
 
-<section class="mb-3 mt-3">
-<div class="container">
- <h2 class="display-5 font-weight-light text-center ">Reviews of :) Customers</h2>
-    <div id="demo" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="carousel-caption">
-                    <p  style="font-family:'Lora', cursive; ">I had a very memorable trip to Kanyakumari. It was awesome and services provided by <span style="font-family: 'Cookie', cursive; font-size:2rem">Incredible India </span>  was excellent  </p> <img src="{% static 'img/aryan.jpg' %}">
-                    <div id="image-caption">Aryan Kumar</div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-caption">
-                  <p  style="font-family:'Lora', cursive; ">I had a very memorable trip to Darjeeling. It was awesome and services provided by <span style="font-family: 'Cookie', cursive; font-size:2rem">Incredible India </span> was excellent  </p>  <img src="{% static 'img/dhiraj.jpg' %}" class="img-fluid">
-                    <div id="image-caption">Mr. Vivan</div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-caption">
-                  <p  style="font-family:'Lora', cursive; ">I had a very memorable trip to Udaipur. It was awesome and services provided by <span style="font-family: 'Cookie', cursive; font-size:2rem">Incredible India </span> was excellent  </p> <img src="{% static 'img/kritika.jpg' %}" class="img-fluid">
-                    <div id="image-caption">Kritika Raj</div>
-                </div>
-            </div>
-        </div> <a class="carousel-control-prev" href="#demo" data-slide="prev"> <i class='fa fa-arrow-left icon'></i> </a> <a class="carousel-control-next" href="#demo" data-slide="next"> <i class='fa fa-arrow-right icon'></i> </a>
-    </div>
-</div>
-</section>
+
+
+  </main><!-- End #main -->
+
+
+
+<footer class="footer-distributed mt-0 mb-0">
+
+			<div class="footer-left">
+
+				<h3>Safe<span>Medicines</span></h3>
+
+				<p class="footer-links">
+					<a href="/">Home</a>
+					·
+					<a href="/medicine">Medicine</a>
+					·
+					<a href="/about">About</a>
+					·
+					<a href="/contact">Contact</a>
+				</p>
+
+				<p class="footer-company-name">Ode To Code &copy; 2021</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>18/1 Bon Behari Bose Road</span> Howrah, West Bengal</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+91 9123045078</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a style="color:white;font-weight:bold;font-size: 1.5rem;" href="https://mail.google.com/mail/?view=cm&fs=1&to=aryasah30@gmail.com"><span>Aryasah30@gmail.com</span></a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About the company</span>
+          We promise reliable medicines at your doorsteps #Stay Safe #Stay at home
+				</p>
+
+				<div class="footer-icons">
+
+					<a href="https://www.facebook.com/arya.sah.98892"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="https://www.linkedin.com/in/arya-sah-5100121b3/"><i class="fa fa-linkedin"></i></a>
+					<a href="#"><i class="fa fa-github"></i></a>
+
+				</div>
+
+			</div>
+	
+
+		</footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter.js'  %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js'  %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js'  %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+      <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
 
 
 
@@ -158,4 +372,9 @@
 
 
 
-{% endblock body %}
+
+
+
+
+
+
