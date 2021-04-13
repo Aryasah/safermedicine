@@ -144,7 +144,7 @@ def index(request):
     return render(request, 'accounts/home.html', {'imag':imag, 'forms':forms,})
                   
 def review(request):
-      global forms
+       global forms
        if request.method == "POST":
         forms = ReviewForm(request.POST, request.FILES)
        if forms.is_valid():
